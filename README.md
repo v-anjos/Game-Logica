@@ -137,7 +137,20 @@ Este sistema é ideal para:
 ---
 
 ## 🖥️ Demonstração
+=================================
+SISTEMA DE AVALIACAO DE LOGICA
 
+Nome: Vinicius
+
+Nivel: Avancado
+
+Pergunta:
+
+((T v F) ^ (F > T)) = (T ^ F)
+
+Resposta: T
+
+Correto!
 ---
 
 ## 👨‍💻 Autor
