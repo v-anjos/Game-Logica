@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include <string.h>
 
 #define MAX_ALUNOS 1000
 
@@ -48,23 +47,22 @@ char simbolo(int op){
 
     switch(op){
 
-        case 0: return '^'; // AND
-        case 1: return 'v'; // OR
-        case 2: return '>'; // IMPLICA
-        case 3: return '='; // IFF
+        case 0: return '^';
+        case 1: return 'v';
+        case 2: return '>';
+        case 3: return '=';
 
     }
 
     return '?';
 }
+
 struct Aluno{
 
     char nome[50];
     float nota;
 
 };
-
-
 
 void salvarResultado(char nome[], float nota){
 
@@ -85,8 +83,6 @@ void salvarResultado(char nome[], float nota){
 
 }
 
-
-
 void mostrarRanking(){
 
     FILE *arquivo;
@@ -94,6 +90,8 @@ void mostrarRanking(){
     struct Aluno alunos[MAX_ALUNOS];
 
     int total=0;
+
+    int i, j;
 
     arquivo = fopen("resultados.txt","r");
 
@@ -103,7 +101,6 @@ void mostrarRanking(){
         return;
 
     }
-
 
     while(fscanf(arquivo,"%s %f",
     alunos[total].nome,
@@ -116,12 +113,11 @@ void mostrarRanking(){
     fclose(arquivo);
 
 
+    // bubble sort
 
-    // ordenar (bubble sort)
+    for(i=0;i<total-1;i++){
 
-    for(int i=0;i<total-1;i++){
-
-        for(int j=0;j<total-1;j++){
+        for(j=0;j<total-1;j++){
 
             if(alunos[j].nota < alunos[j+1].nota){
 
@@ -135,11 +131,9 @@ void mostrarRanking(){
 
     }
 
-
-
     printf("\n====== RANKING DA TURMA ======\n\n");
 
-    for(int i=0;i<total;i++){
+    for(i=0;i<total;i++){
 
         printf("%dº %s - %.2f%%\n",
         i+1,
@@ -150,7 +144,6 @@ void mostrarRanking(){
 
 }
 
-
 int main(){
 
     srand(time(NULL));
@@ -158,6 +151,8 @@ int main(){
     char nome[50];
     int nivel, perguntas, acertos=0;
     char resp;
+
+    int i;
 
     printf("=====================================\n");
     printf(" SISTEMA DE AVALIACAO DE LOGICA\n");
@@ -168,28 +163,13 @@ int main(){
 
     nome[strcspn(nome,"\n")] = 0;
 
-
     printf("\nBem-vindo, %s\n", nome);
 
     printf("\nNIVEIS DISPONIVEIS:\n\n");
 
     printf("1 - INICIANTE\n");
-    printf("Explicacao:\n");
-    printf("Operacoes entre valores simples T e F\n");
-    printf("Conectivos: AND(^), OR(v), NOT(~), IMPLICA(>), IFF(=)\n\n");
-
-
     printf("2 - INTERMEDIARIO\n");
-    printf("Explicacao:\n");
-    printf("Operacoes entre duas formulas logicas\n");
-    printf("Exemplo: (~T ^ F) > (T v F)\n\n");
-
-
     printf("3 - AVANCADO\n");
-    printf("Explicacao:\n");
-    printf("Operacoes entre tres formulas logicas\n");
-    printf("Exemplo: ((T v F) ^ (F > T)) = (T ^ F)\n\n");
-
 
     printf("Escolha o nivel: ");
     scanf("%d",&nivel);
@@ -198,13 +178,10 @@ int main(){
     scanf("%d",&perguntas);
 
 
-
-    for(int i=1;i<=perguntas;i++){
+    for(i=1;i<=perguntas;i++){
 
         printf("\nPergunta %d:\n",i);
 
-
-        // INICIANTE
         if(nivel==1){
 
             char A=VF();
@@ -232,9 +209,6 @@ int main(){
 
         }
 
-
-
-        // INTERMEDIARIO
         else if(nivel==2){
 
             char A=VF();
@@ -269,9 +243,6 @@ int main(){
 
         }
 
-
-
-        // AVANCADO
         else{
 
             char A=VF();
@@ -315,37 +286,14 @@ int main(){
 
     }
 
-
-
     float aproveitamento = (acertos*100.0)/perguntas;
 
-    printf("\n=====================================\n");
-
-    printf("RELATORIO FINAL - %s\n", nome);
-
-    printf("=====================================\n");
-
-    printf("Acertos: %d\n",acertos);
-
-    printf("Erros: %d\n", perguntas-acertos);
+    printf("\nAcertos: %d\n",acertos);
 
     printf("Aproveitamento: %.1f%%\n",aproveitamento);
 
-	salvarResultado(nome, aproveitamento);
+    salvarResultado(nome, aproveitamento);
 
-	mostrarRanking();
-
-
-    if(aproveitamento>=90)
-        printf("Classificacao: EXCELENTE\n");
-
-    else if(aproveitamento>=70)
-        printf("Classificacao: BOM\n");
-
-    else if(aproveitamento>=50)
-        printf("Classificacao: REGULAR\n");
-
-    else
-        printf("Classificacao: INSUFICIENTE\n");
+    mostrarRanking();
 
 }
