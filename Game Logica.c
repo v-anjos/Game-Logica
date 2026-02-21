@@ -331,9 +331,9 @@ int main(){
 
     printf("Aproveitamento: %.1f%%\n",aproveitamento);
 
-	  salvarResultado(nome, aproveitamento);
+	salvarResultado(nome, aproveitamento);
 
-	  mostrarRanking();
+	mostrarRanking();
 
 
     if(aproveitamento>=90)
