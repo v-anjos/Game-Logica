@@ -152,6 +152,7 @@ Pergunta:
 Resposta: T
 
 Correto!
+
 ---
 
 ## 👨‍💻 Autor
@@ -159,6 +160,20 @@ Correto!
 **Vinicius Anjos**
 
 Projeto desenvolvido com foco em educação e formação lógica.
+
+---
+
+⭐ Contribuição
+
+Sinta-se livre para:
+
+Melhorar
+
+Adaptar
+
+Expandir
+
+Usar em sala
 
 ---
 
