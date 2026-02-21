@@ -1,45 +1,38 @@
-# 🧠 Sistema de Avaliação de Lógica Proposicional em C
+<!-- BANNER -->
+<p align="center">
 
-Sistema educacional desenvolvido em linguagem C para **ensino, prática e avaliação de Lógica Proposicional**, com geração automática de exercícios, múltiplos níveis de dificuldade, relatório de desempenho e **ranking da turma com persistência em arquivo**.
+# 🧠 Sistema de Avaliação de Lógica Proposicional
 
-Ideal para uso em:
+### Plataforma educacional em C para ensino, prática e avaliação de lógica formal
 
-- Ensino Médio
-- Cursos Técnicos
-- Graduação em Computação
-- Disciplinas de Lógica e Matemática Discreta
-- Introdução à Programação
+<img src="https://img.shields.io/badge/Linguagem-C-blue.svg">
+<img src="https://img.shields.io/badge/Status-Ativo-success.svg">
+<img src="https://img.shields.io/badge/Foco-Educacional-orange.svg">
+<img src="https://img.shields.io/badge/Nível-Iniciante%20ao%20Avançado-purple.svg">
 
----
-
-# 📚 Objetivo
-
-Este projeto tem como objetivo auxiliar no desenvolvimento do **pensamento lógico formal**, avaliando o aluno através de expressões com conectivos proposicionais.
-
-O sistema funciona como uma **plataforma de avaliação interativa via terminal**.
+</p>
 
 ---
 
-# 🚀 Funcionalidades
+## 📖 Sobre o Projeto
 
-✅ Menu inicial com identificação do aluno  
-✅ Explicação pedagógica dos níveis  
-✅ Escolha da quantidade de perguntas  
-✅ Geração automática de exercícios  
-✅ Correção automática  
-✅ Relatório final com:
+Este projeto é um **sistema educacional interativo via terminal**, desenvolvido em linguagem C, que permite avaliar e desenvolver o raciocínio lógico proposicional de estudantes de forma progressiva.
 
-- Acertos
-- Erros
-- Aproveitamento (%)
-- Classificação
-
-✅ Salvamento automático em arquivo  
-✅ Ranking da turma automático  
+O sistema gera automaticamente expressões lógicas, corrige respostas, calcula desempenho e mantém um **ranking persistente da turma**.
 
 ---
 
-# 🧩 Conectivos Implementados
+## 🎯 Objetivos
+
+- Desenvolver raciocínio lógico formal
+- Ensinar conectivos proposicionais
+- Avaliar automaticamente o desempenho
+- Criar ambiente de prática progressiva
+- Introduzir fundamentos da programação
+
+---
+
+## 🧩 Conectivos Implementados
 
 | Símbolo | Nome | Descrição |
 |---|---|---|
@@ -51,51 +44,115 @@ O sistema funciona como uma **plataforma de avaliação interativa via terminal*
 
 ---
 
-# 🎯 Níveis
+## 🧠 Níveis do Sistema
 
-## 🟢 Iniciante
+### 🟢 Iniciante
 
 Operações entre valores simples:
 
 ---
 
-## 🟡 Intermediário
+### 🟡 Intermediário
 
 Operações entre duas fórmulas:
 
 ---
 
-## 🔴 Avançado
+### 🔴 Avançado
 
 Operações entre três fórmulas:
 
 ---
 
-# 🏆 Ranking da Turma
+## 🏆 Sistema de Ranking
 
-O sistema salva automaticamente no arquivo:
+O sistema salva automaticamente o desempenho no arquivo:
 
-# 💻 Como Compilar
-Use uma IDE que compile a linguagem C, Recomendo o Devc++
-Baixar o arquivo principal do projeto GAME LOGICA
-Rodas o arquivo na IDE
+---
 
-👨‍💻 Autor
+## 📊 Relatório de Desempenho
 
-Vinicius Anjos
+Ao final, o aluno recebe:
 
-📜 Licença
+- Acertos
+- Erros
+- Aproveitamento (%)
+- Classificação
+
+Exemplo:
+
+---
+
+## 💻 Como Compilar
+
+### ✅ Método recomendado (usando IDE)
+
+1. Utilize uma IDE que compile a linguagem C  
+   Recomenda-se o **Dev-C++**
+
+2. Baixe o arquivo principal do projeto:
+
+3. Abra o arquivo na IDE
+
+4. Execute o programa clicando em: Executar → Compilar e Executar
+
+ou pressione: F9 (DevC++)
+
+---
+
+## 🎓 Aplicações Educacionais
+
+Este sistema é ideal para:
+
+- Ensino Médio
+- Cursos Técnicos
+- Graduação em Computação
+- Matemática Discreta
+- Lógica de Programação
+
+---
+
+## 🚀 Funcionalidades
+
+✔ Menu interativo  
+✔ Identificação do aluno  
+✔ Geração automática de exercícios  
+✔ Correção automática  
+✔ Níveis progressivos  
+✔ Relatório completo  
+✔ Ranking da turma  
+✔ Salvamento automático  
+
+---
+
+## 🔮 Melhorias Futuras
+
+- Interface gráfica
+- Sistema de login
+- Ranking por turma
+- Banco de dados
+- Versão Web
+- Painel do Professor
+
+---
+
+## 🖥️ Demonstração
+
+---
+
+## 👨‍💻 Autor
+
+**Vinicius Anjos**
+
+Projeto desenvolvido com foco em educação e formação lógica.
+
+---
+
+## 📜 Licença
 
 Este projeto é livre para uso educacional.
 
-⭐ Contribuição
-
-Sinta-se livre para:
-
-Melhorar
-Adaptar
-Expandir
-Usar em sala
+---
 
 ---
 
@@ -108,3 +165,9 @@ Usar em sala
 </div>
 
 ---
+
+<p align="center">
+
+⭐ Se este projeto te ajudou, considere dar uma estrela!
+
+</p>
