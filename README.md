@@ -96,7 +96,7 @@ Exemplo:
 
 4. Execute o programa clicando em: Executar → Compilar e Executar
 
-ou pressione: F9 (DevC++)
+ou pressione: F11 (DevC++)
 
 ---
 
