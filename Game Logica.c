@@ -175,7 +175,7 @@ int main(){
     printf("1 - INICIANTE\n");
     printf("Explicacao:\n");
     printf("Operacoes entre valores simples T e F\n");
-    printf("Conectivos: AND, OR, NOT, IMPLICA, IFF\n\n");
+    printf("Conectivos: AND(^), OR(v), NOT(~), IMPLICA(>), Se, Somente Se (=)\n\n");
 
 
     printf("2 - INTERMEDIARIO\n");
