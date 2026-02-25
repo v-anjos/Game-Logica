@@ -5,19 +5,30 @@
 
 #define MAX_ALUNOS 1000
 
-// ============================
-// ESTRUTURA ALUNO
-// ============================
 
+void sobreSoftware(){
+    printf("\n=====================================\n");
+
+    printf("LOGICCLASS - Software Educacional\n\n");
+
+    printf("Sistema para ensino e avaliacao de Logica Proposicional\n");
+
+    printf("\nNiveis disponiveis:\n");
+
+    printf("Iniciante\n");
+    printf("Intermediario\n");
+    printf("Avancado\n");
+    printf("Extremo\n");
+
+    printf("\nDesenvolvido para uso educacional\n");
+
+    printf("=====================================\n");
+
+}
 struct Aluno{
     char nome[50];
     float nota;
 };
-
-// ============================
-// FUNÇÕES LÓGICAS
-// ============================
-
 char VF(){
     return rand()%2 ? 'T':'F';
 }
@@ -161,13 +172,9 @@ void mostrarRanking(){
 
 }
 
-// ============================
-// MAIN
-// ============================
 
-int main(){
-
-    srand(time(NULL));
+void iniciarAvaliacao(){
+	
 
     char nome[50];
     int nivel, perguntas, acertos=0;
@@ -179,7 +186,7 @@ int main(){
     printf("=====================================\n\n");
 
     printf("Digite seu nome: ");
-    fgets(nome,50,stdin);
+	scanf(" %[^\n]", nome);
     nome[strcspn(nome,"\n")] = 0;
 
     printf("\nBem-vindo, %s\n\n", nome);
@@ -213,6 +220,10 @@ int main(){
 
     printf("Numero de perguntas: ");
     scanf("%d",&perguntas);
+    if(perguntas<=0){
+	printf("Numero invalido\n");
+	return;
+}
 
     for(i=1;i<=perguntas;i++){
 
@@ -224,6 +235,8 @@ int main(){
 
             printf("Tamanho da formula: ");
             scanf("%d",&tamanho);
+                if(tamanho < 0) tamanho = 0;
+    			if(tamanho > 10) tamanho = 10;
 
             char expr[500];
 
@@ -246,34 +259,75 @@ int main(){
 
         }
 
-        else{
+        else if(nivel==1){
 
-            char A=VF();
-            char B=VF();
-            int op=rand()%4;
+    char A=VF();
+    char B=VF();
+    int op=rand()%4;
 
-            char correta=calcula(A,B,op);
+    char correta=calcula(A,B,op);
 
-            printf("%c %c %c = ",A,simbolo(op),B);
+    printf("%c %c %c = ",A,simbolo(op),B);
 
-            scanf(" %c",&resp);
+    scanf(" %c",&resp);
 
-            if(resp==correta || resp==correta+32){
-
-                printf("Correto\n");
-                acertos++;
-
-            }else{
-
-                printf("Errado. Resposta: %c\n",correta);
-
-            }
-
-        }
-
+    if(resp==correta || resp==correta+32){
+        printf("Correto\n");
+        acertos++;
+    }else{
+        printf("Errado. Resposta: %c\n",correta);
     }
 
-    float nota=(acertos*100.0)/perguntas;
+}
+else if(nivel==2){
+
+    char A=VF();
+    char B=VF();
+    char C=VF();
+
+    int op1=rand()%4;
+    int op2=rand()%4;
+
+    char parte1 = calcula(NOT(A),B,op1);
+
+    char correta = calcula(parte1,C,op2);
+
+    printf("(~%c %c %c) %c %c = ",
+    A,simbolo(op1),B,
+    simbolo(op2),
+    C);
+
+    scanf(" %c",&resp);
+
+    if(resp==correta || resp==correta+32){
+        printf("Correto\n");
+        acertos++;
+    }else{
+        printf("Errado. Resposta: %c\n",correta);
+    }
+
+}
+else if(nivel==3){
+
+    char expr[500];
+
+    char correta = gerarFormula(expr,2);
+
+    printf("%s = ",expr);
+
+    scanf(" %c",&resp);
+
+    if(resp==correta || resp==correta+32){
+        printf("Correto\n");
+        acertos++;
+    }else{
+        printf("Errado. Resposta: %c\n",correta);
+    }
+}
+
+}
+
+	float nota=(acertos*100.0)/perguntas;
 
     printf("\n=====================================\n");
 
@@ -287,6 +341,54 @@ int main(){
     salvarResultado(nome,nota);
 
     mostrarRanking();
+
+
+}
+int main(){
+
+    srand(time(NULL));
+
+    int opcao;
+
+    do{
+
+        printf("\n=====================================\n");
+        printf("             GAME LOGICA \n");
+        printf("=====================================\n");
+
+        printf("1 - Iniciar Avaliacao\n");
+        printf("2 - Ranking\n");
+        printf("3 - Sobre\n");
+        printf("4 - Sair\n");
+
+        printf("\nEscolha: ");
+        scanf("%d",&opcao);
+        getchar(); // limpa ENTER
+
+        switch(opcao){
+
+            case 1:
+                iniciarAvaliacao();
+                break;
+
+            case 2:
+                mostrarRanking();
+                break;
+
+            case 3:
+                sobreSoftware();
+                break;
+
+            case 4:
+                printf("\nEncerrando...\n");
+                break;
+
+            default:
+                printf("\nOpcao invalida\n");
+
+        }
+
+    }while(opcao!=4);
 
     return 0;
 }
