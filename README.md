@@ -200,3 +200,5 @@ Este projeto é livre para uso educacional.
 ⭐ Se este projeto te ajudou, considere dar uma estrela!
 
 </p>
+
+⭐ Se este projeto te ajudou ou inspirou, considere deixar uma estrela no repositório.
